@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 ## Poetry and Articles
-  - You can find some of my poetry on my Instagram Page: [@blotting.paper](https://www.instagram.com/blotting.paper/) (I have been on a hiatus for a while, from instagram not poetry :)).
+  - You can find some of my poetry on my instagram page: [@blotting.paper](https://www.instagram.com/blotting.paper/) (I have been on a hiatus for a while, from instagram not poetry :))
   - My articles on [Manipal The Talk Network](https://www.manipalthetalk.org/) are currently down as they have shifted platforms. Some of my captions to their social media:  [1](https://www.instagram.com/p/CHNvszoBnJT/?igshid=190x8s047hz6c) [2](https://www.instagram.com/p/CJ3pK43BpJB/?igshid=1jehsxk3xr2a5) [3](https://www.instagram.com/reel/CFAHNLgBf05/?igshid=meha1h0nyid6)
  <!-- - [The One by My Creative Genius](https://www.manipalthetalk.org/creative/the-one-by-my-creative-genius/) -->
  <!-- - [Gold](https://www.manipalthetalk.org/creative/gold-day-four-of-napowrimo-2021/) -->
