@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Ankita Ghosh"
   avatar           : "ankita_ghosh.jpeg"
-  bio              : "MSc Computer Science at ETH Zürich"
-  location         : "Switzerland"
+  bio              : "MSc Computer Science at ETH Zürich \nVisiting Graduate Scholar at JHU"
+  location         : "Baltimore, USA"
   employer         : 
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=HsR8SEMAAAAJ&hl=en"
-  email            : "anghosh@student.ethz.com"
+  email            : "anghosh@ethz.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
