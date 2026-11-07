@@ -7,6 +7,13 @@ date: 2021-01-01
 venue: 'Machine Learning for Creativity and Design workshop, NeurIPS'
 paperurl: 'https://arxiv.org/abs/2108.11554'
 # citation: 'Your Name, You. (2010). &quot;Paper Title Number 2.&quot; <i>Journal 1</i>. 1(2).'
+# --- fields used by the new homepage ---
+selected: false          # shown under 'Selected'
+venue_short: 'NeurIPS 2021 Workshop'
+tile: 'XCI-Sketch'            # text on the placeholder thumbnail
+# teaser: /images/teasers/XCI-Sketch.jpg   # optional 160x120 image; replaces the tile
+# code: https://github.com/...
+# project: https://...
 ---
 *Harsh Rathod, Manisimha Varma, Parna Chowdhury, Sameer Saxena, V Manushree,* **Ankita Ghosh**, *Sahil Khose*
 <!-- <br><br>Sketches are a medium to convey a visual scene from an individual's creative perspective. The addition of color substantially enhances the overall expressivity of a sketch. This paper proposes two methods to mimic human-drawn colored sketches by utilizing the Contour Drawing Dataset. Our first approach renders colored outline sketches by applying image processing techniques aided by k-means color clustering. The second method uses a generative adversarial network to develop a model that can generate colored sketches from previously unobserved images. We assess the results obtained through quantitative and qualitative evaluations. -->

@@ -1,0 +1,22 @@
+# `image` is optional (path under /images, ~180x100). Without it a text tile is shown.
+- title: "Semi-Supervised Classification and Segmentation on High Resolution Aerial Images"
+  url: https://youtu.be/BZb60xD8B5s?t=1112
+  tile: FloodNet
+  venues:
+    - Paper presentation with Sahil Khose and Abhiraj Tiwari, FloodNet Challenge, <strong>EarthVision Workshop</strong> at <strong>CVPR</strong>, 2021
+  links:
+    - { name: recording, url: "https://youtu.be/BZb60xD8B5s?t=1112" }
+- title: "IS-CAM: Integrated Score-CAM for Axiomatic-Based Explanations"
+  url: https://youtu.be/26X-HoPCD1Y
+  tile: IS-CAM
+  venues:
+    - <strong>Responsible Computer Vision Workshop</strong> at <strong>CVPR</strong>, 2021
+  links:
+    - { name: recording, url: "https://youtu.be/26X-HoPCD1Y" }
+- title: "Introduction to Computer Vision"
+  url: https://drive.google.com/drive/u/0/folders/1LeJ-VOzK08jvw6ILYycikIZNcGpssCQO
+  tile: Intro to CV
+  venues:
+    - <strong>Birds of a Feather</strong> webinar series, <a href="https://rsm-website.vercel.app/">Research Society MIT</a>
+  links:
+    - { name: materials, url: "https://drive.google.com/drive/u/0/folders/1LeJ-VOzK08jvw6ILYycikIZNcGpssCQO" }

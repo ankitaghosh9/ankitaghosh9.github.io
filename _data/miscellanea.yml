@@ -1,0 +1,31 @@
+# Rows of the Miscellanea section (Jon Barron style).
+# Each row: a colored label box on the left, a list of entries on the right.
+# An entry without `url` is shown as plain text.
+- label: Teaching
+  color: "#edd892"
+  items:
+    - text: Teaching Assistant, Master of Advanced Studies in AI and Digital Technology, ETH Zurich
+- label: Paper Explainers
+  color: "#aaba9e"
+  items:
+    - { text: "BLC: Background Learnable Cascade for Zero-Shot Object Detection, 2021", url: "https://www.youtube.com/watch?v=JP6SjoLDrkc" }
+    - { text: "FLAN: Finetuned Language Models are Zero-Shot Learners, 2021", url: "https://www.youtube.com/watch?v=QDeYaqdjH0w" }
+    - { text: "Self-Distillation: Towards Efficient and Compact Neural Networks, 2021", url: "https://www.youtube.com/watch?v=ugvHJbzhod8" }
+    - { text: "QANet: Local Convolution with Global Self-Attention for Reading Comprehension, 2021", url: "https://youtu.be/C2ps17_DE3M" }
+    - { text: "StackGAN: Text to Photo-realistic Image Synthesis, 2021", url: "https://www.youtube.com/watch?v=kvLgV4xIWzg" }
+    - { text: "On Tiny Episodic Memories in Continual Learning, 2021", url: "https://www.youtube.com/watch?v=MomJtIkMlmw" }
+    - { text: "SimCLRv2: Big Self-Supervised Models are Strong Semi-Supervised Learners, 2021", url: "https://www.youtube.com/watch?v=Y7hdzzGWDNw" }
+    - { text: "CPC: Data-Efficient Image Recognition with Contrastive Predictive Coding, 2021", url: "https://www.youtube.com/watch?v=wJO0fPW3FrA" }
+    - { text: "XCiT: Cross-Covariance Image Transformers, 2021", url: "https://www.youtube.com/watch?v=FVLf9agw8Ho" }
+    - { text: "XZSL: A Deep Multi-Modal Explanation Model for Zero-Shot Learning, 2021", url: "https://www.youtube.com/watch?v=sdfO5cmiVho" }
+- label: Writing
+  color: "#fcb97d"
+  items:
+    - { text: "Poetry on Instagram: @blotting.paper", url: "https://www.instagram.com/blotting.paper/" }
+    - { text: "Manipal The Talk Network: caption 1", url: "https://www.instagram.com/p/CHNvszoBnJT/" }
+    - { text: "Manipal The Talk Network: caption 2", url: "https://www.instagram.com/p/CJ3pK43BpJB/" }
+    - { text: "Manipal The Talk Network: caption 3", url: "https://www.instagram.com/reel/CFAHNLgBf05/" }
+- label: Off the Clock
+  color: "#c6b89e"
+  items:
+    - text: Reading, cooking, swinging a racket to the best of my ability (which is not the best), and penning my thoughts in rhymes and metaphors.
