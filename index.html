@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ankita Ghosh</title>
+  <meta name="description" content="Ankita Ghosh - computer vision and healthcare AI. MSc Computer Science, ETH Zurich.">
+  <link rel="icon" type="image/jpeg" href="media/profile.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style type="text/css">
+    /* Layout after pengsongyou.github.io; Miscellanea after jonbarron.info. */
+    a { color: #1772d0; text-decoration: none; }
+    a:focus, a:hover { color: #f09228; }
+    a:focus-visible, button:focus-visible { outline: 2px solid #1772d0; outline-offset: 3px; }
+    body { margin: 8px; background: #fff; color: #222; }
+    body, td, th, tr, p, a { font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 300; line-height: 1.45; }
+    strong { font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 500; }
+    name { font-family: 'Roboto', sans-serif; font-size: 32px; font-weight: 400; }
+    papertitle { font-family: 'Roboto', sans-serif; font-size: 15px; font-weight: 500; }
+    [hidden] { display: none !important; }
+    img { max-width: 100%; }
+
+    .homepage { width: 100%; max-width: 800px; }
+
+    /* Profile */
+    .profile-pic {
+      border-radius: 8px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+      transition: all .3s cubic-bezier(.25, .8, .25, 1);
+    }
+    .profile-pic:hover { transform: scale(1.05) translateY(-5px); box-shadow: 0 12px 24px rgba(0, 0, 0, .2); }
+
+    /* Affiliation logos */
+    .affiliation-table td { text-align: center; }
+    .affiliation-table img { height: auto; max-height: 56px; }
+
+    /* Section headings */
+    .section-title { margin: 0; padding-bottom: 10px; border-bottom: 1px solid #e6ebf0; font-family: 'Roboto', sans-serif; font-size: 24px; line-height: 1.4; font-weight: 400; scroll-margin-top: 24px; }
+    .homepage > tbody > tr > td > .section-title { margin: 36px 20px 8px; }
+
+    /* News */
+    .updates-table li { margin-bottom: 6px; }
+    .news-toggle { margin-left: 40px; padding: 0; border: 0; background: none; color: #1772d0; font: inherit; cursor: pointer; }
+    .news-toggle:hover { color: #f09228; }
+
+    /* Research: Selected / Full List */
+    .publication-filters { white-space: nowrap; font-size: 15px; }
+    .publication-toggle-button { border: 0; background: none; font: inherit; font-weight: 500; color: #1772d0; cursor: pointer; padding: 6px 12px; border-radius: 15px; transition: all .2s ease; }
+    .publication-toggle-button:hover { background-color: #e9ecef; }
+    .publication-toggle-button.active { background-color: #1772d0; color: #fff; }
+    #publications tr.publication-item { display: none; }
+    #publications tr.selected-publication, #publications.show-all tr.publication-item { display: table-row; }
+
+    /* Teaser thumbnails. .one = still image, .two = optional hover layer on top. */
+    .one { width: 160px; height: 120px; position: relative; }
+    .two { width: 160px; height: 120px; position: absolute; top: 0; left: 0; transition: opacity .2s ease-in-out; }
+    .one img, .two img, .two video { width: 160px; height: 120px; object-fit: cover; border-radius: 4px; }
+    .talks-table .one, .talks-table .two, .talks-table .one img, .talks-table .tile { width: 180px; height: 100px; }
+
+    /* Text tile shown until a teaser image is added */
+    .tile { width: 160px; height: 120px; box-sizing: border-box; padding: 10px; border-radius: 6px; display: flex; align-items: center; justify-content: center; text-align: center; font-family: 'Lato', sans-serif; font-size: 18px; font-weight: 700; color: #2b2b2b; }
+    .tile-blue { background: #dbe8f6; } .tile-peach { background: #f6e3cc; }
+    .tile-green { background: #dcebd9; } .tile-lilac { background: #ece0f1; }
+
+    /* Miscellanea (Jon Barron style) */
+    .misc-table h2 { margin: 0; font-family: 'Lato', Verdana, Helvetica, sans-serif; font-size: 22px; font-weight: 400; line-height: 1.2; }
+    .colored-box { color: #000; padding: 20px; display: inline-block; border-radius: 10px; }
+
+    .footer-note { text-align: right; font-size: small; color: #555; }
+    .back-to-top { position: fixed; right: 20px; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 10; display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; border: 1px solid #dce4ed; border-radius: 6px; background: #fff; box-shadow: 0 2px 8px rgba(0, 0, 0, .06); font-size: 14px; font-weight: 400; }
+
+    /* Narrow windows: let the table layout flow */
+    @media (max-width: 860px) {
+      .homepage, .homepage > tbody, .homepage > tbody > tr, .homepage > tbody > tr > td { display: block; width: 100%; }
+      .homepage { margin: 0 auto; }
+      .homepage table { width: 100%; table-layout: fixed; }
+      .homepage td { overflow-wrap: anywhere; }
+      .profile-pic { height: auto; }
+    }
+
+    /* Phones: stack everything */
+    @media (max-width: 600px) {
+      body, td, th, tr, p, a { font-size: 16px; font-weight: 400; line-height: 1.55; }
+      strong, papertitle { font-size: 16px; }
+      name { font-size: 28px; }
+      .homepage td { box-sizing: border-box; }
+      .homepage table > tbody > tr > td { padding: 12px 8px; }
+      .profile-table > tbody > tr { display: flex; flex-direction: column-reverse; }
+      .profile-table > tbody > tr > td { display: block; width: 100%; }
+      .profile-table > tbody > tr > td:last-child { text-align: center; padding-bottom: 0; }
+      .profile-pic { width: 170px; }
+      .affiliation-table > tbody > tr { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; }
+      .affiliation-table td { display: block; width: 100%; }
+      .affiliation-table img { max-height: 40px; }
+      .updates-table ul { padding-left: 20px; }
+      .news-toggle { margin-left: 20px; }
+      .homepage > tbody > tr > td > .section-title { margin: 28px 8px 8px; font-size: 22px; }
+      .publication-table, .publication-table > tbody, .talks-table, .talks-table > tbody,
+      .misc-table, .misc-table > tbody { display: block; }
+      .publication-table > tbody > tr, .talks-table > tbody > tr, .misc-table > tbody > tr { display: block; margin-bottom: 12px; }
+      #publications tr.selected-publication, #publications.show-all tr.publication-item { display: block; }
+      .publication-table td, .talks-table td, .misc-table td { display: block; width: 100% !important; padding: 6px 8px !important; text-align: left !important; }
+      .misc-table h2 { font-size: 19px; }
+      .colored-box { padding: 12px 16px; }
+      .back-to-top { right: 12px; min-height: 44px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .profile-pic, .two { transition: none; }
+      .profile-pic:hover { transform: none; }
+    }
+  </style>
+  <script src="script/functions.js"></script>
+</head>
+<body id="top">
+<table class="homepage" width="800" border="0" align="center" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+
+  <!-- ==================== PROFILE ==================== -->
+  <table class="profile-table" width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+    <tr>
+      <td width="67%" valign="middle">
+        <p align="center">
+          <name>Ankita Ghosh</name>
+        </p>
+        <p>
+          Hello, I am Ankita Ghosh, an MSc Computer Science graduate from <a href="https://ethz.ch/en.html">ETH Zürich</a>, Switzerland, where I majored in visual and interactive computing.
+          I am currently a Teaching Assistant for the Master of Advanced Studies in AI and Digital Technology at ETH Zurich.
+          My interest lies in computer vision, particularly its applications in interdisciplinary domains like healthcare AI.
+        </p>
+        <p>
+          I have worked with the <a href="https://www.arcade.cs.jhu.edu/">ARCADE lab</a> led by Prof. Mathias Unberath at Johns Hopkins University,
+          the <a href="https://vlg.inf.ethz.ch/">Computer Vision and Learning Group</a> led by Prof. Dr. Siyu Tang at ETH Zurich,
+          the <a href="https://uwaterloo.ca/social-intelligent-robotics-research-lab/">Social and Intelligent Robotics Research Laboratory</a> at the University of Waterloo (Mitacs Globalink),
+          and the <a href="https://sites.google.com/view/spectrumlabeeiisc/spectrum-lab">Spectrum Lab</a> at the Indian Institute of Science, Bangalore.
+          I also interned at Stryker as a Machine Vision Engineer in Freiburg, Germany.
+          My work spans applied AI across healthcare, social robotics, model interpretability, and 3D modeling and manipulation for digital humans and robots.
+        </p>
+        <p>
+          I am always open to interdisciplinary research, so if you would like to discuss my projects or a potential collaboration, feel free to email me.
+        </p>
+        <p align="center">
+          <!-- TODO: check the email address (was anghosh@ethz.com in the old _config.yml; ethz.ch?) -->
+          <a href="mailto:anghosh@ethz.com">Email</a> &nbsp;|&nbsp;
+          <a href="files/AnkitaGhosh_Resume.pdf">CV</a> &nbsp;|&nbsp;
+          <a href="https://github.com/ankitaghosh9">GitHub</a> &nbsp;|&nbsp;
+          <a href="https://scholar.google.com/citations?user=HsR8SEMAAAAJ&amp;hl=en">Google Scholar</a> &nbsp;|&nbsp;
+          <a href="https://www.linkedin.com/in/ghoshankita0907">LinkedIn</a>
+        </p>
+      </td>
+      <td width="33%">
+        <img src="media/profile.jpg" width="250" alt="Photo of Ankita Ghosh" class="profile-pic">
+      </td>
+    </tr>
+  </table>
+
+  <!-- ==================== AFFILIATION LOGOS ==================== -->
+  <table class="affiliation-table" width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+    <tr>
+      <td valign="middle"><a href="https://ethz.ch/en.html"><img src="media/eth_logo.png" width="110" alt="ETH Zurich"></a></td>
+      <td valign="middle"><a href="https://www.jhu.edu/"><img src="media/jhu_logo.png" width="110" alt="Johns Hopkins University"></a></td>
+      <td valign="middle"><a href="https://www.stryker.com/"><img src="media/stryker_logo.png" width="90" alt="Stryker"></a></td>
+      <td valign="middle"><a href="https://uwaterloo.ca/"><img src="media/waterloo_logo.png" width="100" alt="University of Waterloo"></a></td>
+      <td valign="middle"><a href="https://iisc.ac.in/"><img src="media/iisc_logo.png" width="50" alt="Indian Institute of Science"></a></td>
+      <td valign="middle"><a href="https://manipal.edu/mit.html"><img src="media/manipal_logo.jpg" width="65" alt="Manipal Institute of Technology"></a></td>
+    </tr>
+  </table>
+
+  <!-- ==================== NEWS ==================== -->
+  <table class="updates-table" width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+    <tr>
+      <td>
+        <h2 class="section-title" id="news">News</h2>
+        <!-- TODO: check dates; add e.g. finishing the MSc and starting the TA position -->
+        <ul>
+          <li><strong>04/2026</strong> <a href="https://link.springer.com/article/10.1007/s11548-026-03644-w"><strong>TwinOR</strong></a>, photorealistic digital twins of operating rooms for embodied AI, is accepted to <strong>IPCAI 2026</strong>!</li>
+          <li><strong>02/2024</strong> Two papers on retinal image analysis (<a href="https://ieeexplore.ieee.org/abstract/document/10440760"><strong>Fovea Segmentation</strong></a> and <a href="https://ieeexplore.ieee.org/abstract/document/10440906"><strong>Explainable AMD Classification</strong></a>) are published in <strong>IEEE INDICON 2023</strong>.</li>
+        </ul>
+        <button type="button" class="news-toggle" id="news-toggle" aria-expanded="false" aria-controls="old_news">---- show more ----</button>
+        <ul id="old_news" hidden>
+          <li><strong>12/2021</strong> <a href="https://arxiv.org/abs/2105.08655"><strong>FloodNet semi-supervised segmentation</strong></a> and <a href="https://arxiv.org/abs/2108.11554"><strong>XCI-Sketch</strong></a> are presented at <strong>NeurIPS 2021</strong> workshops.</li>
+          <li><strong>06/2021</strong> <a href="https://arxiv.org/abs/2010.03023"><strong>IS-CAM</strong></a> is presented at the Responsible Computer Vision workshop at <strong>CVPR 2021</strong>.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td width="100%" valign="middle">
+        <h2 class="section-title" id="research">Research
+          <span class="publication-filters">(<button type="button" class="publication-toggle-button active" id="show-selected" aria-pressed="true">Selected</button> |
+          <button type="button" class="publication-toggle-button" id="show-all" aria-pressed="false">Full List</button>)</span>
+        </h2>
+        <p>
+          My interests lie in computer vision, particularly its applications in interdisciplinary domains like healthcare AI.
+          Full list also on <a href="https://scholar.google.com/citations?user=HsR8SEMAAAAJ&amp;hl=en">Google Scholar</a>.
+        </p>
+      </td>
+    </tr>
+  </table>
+
+  <!-- ==================== RESEARCH ====================
+       One <tr> per paper, newest first.
+       class="publication-item selected-publication"  -> shown under "Selected" and "Full List"
+       class="publication-item"                       -> shown only under "Full List"
+
+       Thumbnail: replace the <div class="tile ..."> with  <img src="media/NAME.jpg" alt="...">  (160x120).
+       Optional hover animation (like Peng's): add data-hover="NAME_shape" to the <tr> and put
+         <div class="two" id="NAME_shape"><video muted autoplay loop playsinline><source src="media/NAME.mp4" type="video/mp4"></video></div>
+       inside <div class="one">, before the still image.
+  -->
+  <table class="publication-table" id="publications" width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+
+    <!-- TwinOR -->
+    <tr class="publication-item selected-publication">
+      <td width="25%" valign="top">
+        <div class="one"><div class="tile tile-blue">TwinOR</div></div>
+      </td>
+      <td width="75%" valign="top">
+        <a href="https://link.springer.com/article/10.1007/s11548-026-03644-w">
+          <papertitle>TwinOR: Photorealistic Digital Twins of Dynamic Operating Rooms for Embodied AI Research</papertitle>
+        </a>
+        <br>
+        Han Zhang, Yiqing Shen, Roger D. Soberanis-Mukul, <strong>Ankita Ghosh</strong>, Hao Ding, Lalithkumar Seenivasan, Jose L. Porras, Zhekai Mao, Chenjia Li, Wenjie Xiao, Lonny Yarmus, Angela Christine Argento, Masaru Ishii, Mathias Unberath
+        <br>
+        <em>International Conference on Information Processing in Computer-Assisted Interventions (IPCAI)</em>, 2026
+        <br>
+        <a href="https://link.springer.com/article/10.1007/s11548-026-03644-w">paper</a>
+      </td>
+    </tr>
+
+    <!-- Fovea segmentation -->
+    <tr class="publication-item selected-publication">
+      <td width="25%" valign="top">
+        <div class="one"><div class="tile tile-peach">Fovea Seg.</div></div>
+      </td>
+      <td width="75%" valign="top">
+        <a href="https://ieeexplore.ieee.org/abstract/document/10440760">
+          <papertitle>Fovea Segmentation Using Semi-Supervised Learning</papertitle>
+        </a>
+        <br>
+        <strong>Ankita Ghosh</strong>, Sahil Khose, Yogish S. Kamath, Neetha I. R. Kuzhuppilly, J. R. Harish Kumar
+        <br>
+        <em>IEEE India Council International Conference (INDICON)</em>, 2023
+        <br>
+        <a href="https://ieeexplore.ieee.org/abstract/document/10440760">paper</a>
+      </td>
+    </tr>
+
+    <!-- AMD classification -->
+    <tr class="publication-item">
+      <td width="25%" valign="top">
+        <div class="one"><div class="tile tile-green">AMD</div></div>
+      </td>
+      <td width="75%" valign="top">
+        <a href="https://ieeexplore.ieee.org/abstract/document/10440906">
+          <papertitle>Explainable Classification of Macular Degeneration Using Deep Learning</papertitle>
+        </a>
+        <br>
+        Sahil Khose, <strong>Ankita Ghosh</strong>, Yogish S. Kamath, Neetha I. R. Kuzhuppilly, J. R. Harish Kumar
+        <br>
+        <em>IEEE India Council International Conference (INDICON)</em>, 2023
+        <br>
+        <a href="https://ieeexplore.ieee.org/abstract/document/10440906">paper</a>
+      </td>
+    </tr>
+
+    <!-- FloodNet -->
+    <tr class="publication-item selected-publication">
+      <td width="25%" valign="top">
+        <div class="one"><div class="tile tile-lilac">FloodNet</div></div>
+      </td>
+      <td width="75%" valign="top">
+        <a href="https://arxiv.org/abs/2105.08655">
+          <papertitle>Semi-Supervised Classification and Segmentation on High Resolution Aerial Images</papertitle>
+        </a>
+        <br>
+        <strong>Ankita Ghosh</strong>, Sahil Khose, Abhiraj Tiwari
+        <br>
+        <em>Tackling Climate Change with Machine Learning Workshop, NeurIPS</em>, 2021
+        <br>
+        <a href="https://arxiv.org/abs/2105.08655">paper</a> |
+        <a href="https://youtu.be/BZb60xD8B5s?t=1112">talk</a>
+      </td>
+    </tr>
+
+    <!-- XCI-Sketch -->
+    <tr class="publication-item">
+      <td width="25%" valign="top">
+        <div class="one"><div class="tile tile-blue">XCI-Sketch</div></div>
+      </td>
+      <td width="75%" valign="top">
+        <a href="https://arxiv.org/abs/2108.11554">
+          <papertitle>XCI-Sketch: Extraction of Color Information from Images for Generation of Colored Outlines and Sketches</papertitle>
+        </a>
+        <br>
+        Harsh Rathod, Manisimha Varma, Parna Chowdhury, Sameer Saxena, V Manushree, <strong>Ankita Ghosh</strong>, Sahil Khose
+        <br>
+        <em>Machine Learning for Creativity and Design Workshop, NeurIPS</em>, 2021
+        <br>
+        <a href="https://arxiv.org/abs/2108.11554">paper</a>
+      </td>
+    </tr>
+
+    <!-- IS-CAM -->
+    <tr class="publication-item selected-publication">
+      <td width="25%" valign="top">
+        <div class="one"><div class="tile tile-peach">IS-CAM</div></div>
+      </td>
+      <td width="75%" valign="top">
+        <a href="https://arxiv.org/abs/2010.03023">
+          <papertitle>IS-CAM: Integrated Score-CAM for Axiomatic-Based Explanations</papertitle>
+        </a>
+        <br>
+        Rakshit Naidu, <strong>Ankita Ghosh</strong>, Yash Maurya, Shamanth R Nayak K, Soumya Snigdha Kundu
+        <br>
+        <em>Responsible Computer Vision Workshop, CVPR</em>, 2021
+        <br>
+        <a href="https://arxiv.org/abs/2010.03023">paper</a> |
+        <a href="https://youtu.be/26X-HoPCD1Y">talk</a>
+      </td>
+    </tr>
+
+  </table>
+
+  <!-- ==================== TALKS ==================== -->
+  <h2 class="section-title" id="talks">Talks</h2>
+
+  <table class="talks-table" width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+
+    <tr>
+      <td width="25%" valign="top">
+        <div class="one"><div class="tile tile-lilac">FloodNet</div></div>
+      </td>
+      <td width="75%" valign="top">
+        <a href="https://youtu.be/BZb60xD8B5s?t=1112">
+          <papertitle>Semi-Supervised Classification and Segmentation on High Resolution Aerial Images</papertitle></a>
+        <br>
+        Paper presentation with Sahil Khose and Abhiraj Tiwari, FloodNet Challenge, <strong>EarthVision Workshop</strong> at <strong>CVPR</strong>, 2021
+        <br>
+        <a href="https://youtu.be/BZb60xD8B5s?t=1112">recording</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="25%" valign="top">
+        <div class="one"><div class="tile tile-peach">IS-CAM</div></div>
+      </td>
+      <td width="75%" valign="top">
+        <a href="https://youtu.be/26X-HoPCD1Y">
+          <papertitle>IS-CAM: Integrated Score-CAM for Axiomatic-Based Explanations</papertitle></a>
+        <br>
+        <strong>Responsible Computer Vision Workshop</strong> at <strong>CVPR</strong>, 2021
+        <br>
+        <a href="https://youtu.be/26X-HoPCD1Y">recording</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="25%" valign="top">
+        <div class="one"><div class="tile tile-green">Intro to CV</div></div>
+      </td>
+      <td width="75%" valign="top">
+        <a href="https://drive.google.com/drive/u/0/folders/1LeJ-VOzK08jvw6ILYycikIZNcGpssCQO">
+          <papertitle>Introduction to Computer Vision</papertitle></a>
+        <br>
+        <strong>Birds of a Feather</strong> webinar series, <a href="https://rsm-website.vercel.app/">Research Society MIT</a>
+        <br>
+        <a href="https://drive.google.com/drive/u/0/folders/1LeJ-VOzK08jvw6ILYycikIZNcGpssCQO">materials</a>
+      </td>
+    </tr>
+
+  </table>
+
+  <!-- ==================== MISCELLANEA (Jon Barron style) ==================== -->
+  <h2 class="section-title" id="misc">Miscellanea</h2>
+
+  <table class="misc-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+
+    <tr>
+      <td align="center" style="padding:16px;width:22%;vertical-align:middle">
+        <div class="colored-box" style="background-color: #edd892;"><h2>Teaching</h2></div>
+      </td>
+      <td style="padding:8px;width:78%;vertical-align:middle">
+        Teaching Assistant, Master of Advanced Studies in AI and Digital Technology, ETH Zurich
+      </td>
+    </tr>
+
+    <tr>
+      <td align="center" style="padding:16px;width:22%;vertical-align:middle">
+        <div class="colored-box" style="background-color: #aaba9e;"><h2>Paper Explainers</h2></div>
+      </td>
+      <td style="padding:8px;width:78%;vertical-align:middle">
+        <a href="https://www.youtube.com/watch?v=JP6SjoLDrkc">BLC: Background Learnable Cascade for Zero-Shot Object Detection, 2021</a><br>
+        <a href="https://www.youtube.com/watch?v=QDeYaqdjH0w">FLAN: Finetuned Language Models are Zero-Shot Learners, 2021</a><br>
+        <a href="https://www.youtube.com/watch?v=ugvHJbzhod8">Self-Distillation: Towards Efficient and Compact Neural Networks, 2021</a><br>
+        <a href="https://youtu.be/C2ps17_DE3M">QANet: Local Convolution with Global Self-Attention for Reading Comprehension, 2021</a><br>
+        <a href="https://www.youtube.com/watch?v=kvLgV4xIWzg">StackGAN: Text to Photo-realistic Image Synthesis, 2021</a><br>
+        <a href="https://www.youtube.com/watch?v=MomJtIkMlmw">On Tiny Episodic Memories in Continual Learning, 2021</a><br>
+        <a href="https://www.youtube.com/watch?v=Y7hdzzGWDNw">SimCLRv2: Big Self-Supervised Models are Strong Semi-Supervised Learners, 2021</a><br>
+        <a href="https://www.youtube.com/watch?v=wJO0fPW3FrA">CPC: Data-Efficient Image Recognition with Contrastive Predictive Coding, 2021</a><br>
+        <a href="https://www.youtube.com/watch?v=FVLf9agw8Ho">XCiT: Cross-Covariance Image Transformers, 2021</a><br>
+        <a href="https://www.youtube.com/watch?v=sdfO5cmiVho">XZSL: A Deep Multi-Modal Explanation Model for Zero-Shot Learning, 2021</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="center" style="padding:16px;width:22%;vertical-align:middle">
+        <div class="colored-box" style="background-color: #fcb97d;"><h2>Writing</h2></div>
+      </td>
+      <td style="padding:8px;width:78%;vertical-align:middle">
+        <a href="https://www.instagram.com/blotting.paper/">Poetry on Instagram: @blotting.paper</a><br>
+        <a href="https://www.instagram.com/p/CHNvszoBnJT/">Manipal The Talk Network: caption 1</a><br>
+        <a href="https://www.instagram.com/p/CJ3pK43BpJB/">Manipal The Talk Network: caption 2</a><br>
+        <a href="https://www.instagram.com/reel/CFAHNLgBf05/">Manipal The Talk Network: caption 3</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="center" style="padding:16px;width:22%;vertical-align:middle">
+        <div class="colored-box" style="background-color: #c6b89e;"><h2>Off the Clock</h2></div>
+      </td>
+      <td style="padding:8px;width:78%;vertical-align:middle">
+        Reading, cooking, swinging a racket to the best of my ability (which is not the best), and penning my thoughts in rhymes and metaphors.
+      </td>
+    </tr>
+
+  </table>
+
+  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+    <tr>
+      <td>
+        <p class="footer-note">
+          Website design adapted from <a href="https://pengsongyou.github.io/">Songyou Peng</a> and
+          <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron</a>.
+        </p>
+      </td>
+    </tr>
+  </table>
+
+</td>
+</tr>
+</table>
+
+<a class="back-to-top" href="#top" aria-label="Back to top" hidden>&uarr; Top</a>
+</body>
+</html>
