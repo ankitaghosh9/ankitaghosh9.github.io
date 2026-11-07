@@ -68,7 +68,8 @@
     .misc-table h2 { margin: 0; font-family: 'Lato', Verdana, Helvetica, sans-serif; font-size: 22px; font-weight: 400; line-height: 1.2; }
     .colored-box { color: #000; padding: 20px; display: inline-block; border-radius: 10px; }
 
-    .footer-note { text-align: right; font-size: small; color: #555; }
+    .footer-note, .footer-note a { text-align: right; font-size: small; color: #555; }
+    .footer-note a { color: #1772d0; }
     .back-to-top { position: fixed; right: 20px; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 10; display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; border: 1px solid #dce4ed; border-radius: 6px; background: #fff; box-shadow: 0 2px 8px rgba(0, 0, 0, .06); font-size: 14px; font-weight: 400; }
 
     /* Narrow windows: let the table layout flow */
@@ -323,59 +324,21 @@
 
   </table>
 
-  <!-- ==================== TALKS ==================== -->
-  <h2 class="section-title" id="talks">Talks</h2>
-
-  <table class="talks-table" width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-
-    <tr>
-      <td width="25%" valign="top">
-        <div class="one"><div class="tile tile-lilac">FloodNet</div></div>
-      </td>
-      <td width="75%" valign="top">
-        <a href="https://youtu.be/BZb60xD8B5s?t=1112">
-          <papertitle>Semi-Supervised Classification and Segmentation on High Resolution Aerial Images</papertitle></a>
-        <br>
-        Paper presentation with Sahil Khose and Abhiraj Tiwari, FloodNet Challenge, <strong>EarthVision Workshop</strong> at <strong>CVPR</strong>, 2021
-        <br>
-        <a href="https://youtu.be/BZb60xD8B5s?t=1112">recording</a>
-      </td>
-    </tr>
-
-    <tr>
-      <td width="25%" valign="top">
-        <div class="one"><div class="tile tile-peach">IS-CAM</div></div>
-      </td>
-      <td width="75%" valign="top">
-        <a href="https://youtu.be/26X-HoPCD1Y">
-          <papertitle>IS-CAM: Integrated Score-CAM for Axiomatic-Based Explanations</papertitle></a>
-        <br>
-        <strong>Responsible Computer Vision Workshop</strong> at <strong>CVPR</strong>, 2021
-        <br>
-        <a href="https://youtu.be/26X-HoPCD1Y">recording</a>
-      </td>
-    </tr>
-
-    <tr>
-      <td width="25%" valign="top">
-        <div class="one"><div class="tile tile-green">Intro to CV</div></div>
-      </td>
-      <td width="75%" valign="top">
-        <a href="https://drive.google.com/drive/u/0/folders/1LeJ-VOzK08jvw6ILYycikIZNcGpssCQO">
-          <papertitle>Introduction to Computer Vision</papertitle></a>
-        <br>
-        <strong>Birds of a Feather</strong> webinar series, <a href="https://rsm-website.vercel.app/">Research Society MIT</a>
-        <br>
-        <a href="https://drive.google.com/drive/u/0/folders/1LeJ-VOzK08jvw6ILYycikIZNcGpssCQO">materials</a>
-      </td>
-    </tr>
-
-  </table>
-
   <!-- ==================== MISCELLANEA (Jon Barron style) ==================== -->
   <h2 class="section-title" id="misc">Miscellanea</h2>
 
   <table class="misc-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+
+    <tr>
+      <td align="center" style="padding:16px;width:22%;vertical-align:middle">
+        <div class="colored-box" style="background-color: #aaba9e;"><h2>Talks</h2></div>
+      </td>
+      <td style="padding:8px;width:78%;vertical-align:middle">
+        <a href="https://youtu.be/BZb60xD8B5s?t=1112">Semi-Supervised Classification and Segmentation on High Resolution Aerial Images, EarthVision Workshop at CVPR 2021</a><br>
+        <a href="https://youtu.be/26X-HoPCD1Y">IS-CAM: Integrated Score-CAM for Axiomatic-Based Explanations, Responsible Computer Vision Workshop at CVPR 2021</a><br>
+        <a href="https://drive.google.com/drive/u/0/folders/1LeJ-VOzK08jvw6ILYycikIZNcGpssCQO">Introduction to Computer Vision, Birds of a Feather webinar series, Research Society MIT</a>
+      </td>
+    </tr>
 
     <tr>
       <td align="center" style="padding:16px;width:22%;vertical-align:middle">
@@ -386,23 +349,6 @@
       </td>
     </tr>
 
-    <tr>
-      <td align="center" style="padding:16px;width:22%;vertical-align:middle">
-        <div class="colored-box" style="background-color: #aaba9e;"><h2>Paper Explainers</h2></div>
-      </td>
-      <td style="padding:8px;width:78%;vertical-align:middle">
-        <a href="https://www.youtube.com/watch?v=JP6SjoLDrkc">BLC: Background Learnable Cascade for Zero-Shot Object Detection, 2021</a><br>
-        <a href="https://www.youtube.com/watch?v=QDeYaqdjH0w">FLAN: Finetuned Language Models are Zero-Shot Learners, 2021</a><br>
-        <a href="https://www.youtube.com/watch?v=ugvHJbzhod8">Self-Distillation: Towards Efficient and Compact Neural Networks, 2021</a><br>
-        <a href="https://youtu.be/C2ps17_DE3M">QANet: Local Convolution with Global Self-Attention for Reading Comprehension, 2021</a><br>
-        <a href="https://www.youtube.com/watch?v=kvLgV4xIWzg">StackGAN: Text to Photo-realistic Image Synthesis, 2021</a><br>
-        <a href="https://www.youtube.com/watch?v=MomJtIkMlmw">On Tiny Episodic Memories in Continual Learning, 2021</a><br>
-        <a href="https://www.youtube.com/watch?v=Y7hdzzGWDNw">SimCLRv2: Big Self-Supervised Models are Strong Semi-Supervised Learners, 2021</a><br>
-        <a href="https://www.youtube.com/watch?v=wJO0fPW3FrA">CPC: Data-Efficient Image Recognition with Contrastive Predictive Coding, 2021</a><br>
-        <a href="https://www.youtube.com/watch?v=FVLf9agw8Ho">XCiT: Cross-Covariance Image Transformers, 2021</a><br>
-        <a href="https://www.youtube.com/watch?v=sdfO5cmiVho">XZSL: A Deep Multi-Modal Explanation Model for Zero-Shot Learning, 2021</a>
-      </td>
-    </tr>
 
     <tr>
       <td align="center" style="padding:16px;width:22%;vertical-align:middle">
@@ -413,15 +359,6 @@
         <a href="https://www.instagram.com/p/CHNvszoBnJT/">Manipal The Talk Network: caption 1</a><br>
         <a href="https://www.instagram.com/p/CJ3pK43BpJB/">Manipal The Talk Network: caption 2</a><br>
         <a href="https://www.instagram.com/reel/CFAHNLgBf05/">Manipal The Talk Network: caption 3</a>
-      </td>
-    </tr>
-
-    <tr>
-      <td align="center" style="padding:16px;width:22%;vertical-align:middle">
-        <div class="colored-box" style="background-color: #c6b89e;"><h2>Off the Clock</h2></div>
-      </td>
-      <td style="padding:8px;width:78%;vertical-align:middle">
-        Reading, cooking, swinging a racket to the best of my ability (which is not the best), and penning my thoughts in rhymes and metaphors.
       </td>
     </tr>
 
